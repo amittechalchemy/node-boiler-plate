@@ -1,0 +1,36 @@
+{
+  "apps": [
+    {
+      "name": "tasr",
+      "script": "server.js",
+      "instances": "1",
+      "exec_mode": "cluster",
+      "args": ["color"],
+      "node_args": [],
+      "watch": true,
+      "ignore_watch": ["logs", "node_modules", ".git", "swagger.json"],
+      "merge_logs": true,
+      "cwd": ".",
+      "error_file": "./logs/taerrlog.log",
+      "out_file": "./logs/ta.log",
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "max_memory_restart": "8G",
+      "env_development": {
+        "NODE_ENV": "development",
+        "PORT": 3000
+      },
+      "env_production": {
+        "NODE_ENV": "production",
+        "PORT": 3001
+      },
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": 3000
+      },
+      "env_staging": {
+        "NODE_ENV": "production",
+        "PORT": 3000
+      }
+    }
+  ]
+}
