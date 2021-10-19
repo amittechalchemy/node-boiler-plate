@@ -25,9 +25,8 @@ passport.use(
 passport.use(
   new GoogleStrategy(
     {
-      clientID:
-        '518116636311-c80ai6gc2srauibvnvj5mu5ifdnv510f.apps.googleusercontent.com',
-      clientSecret: 'ry3OW2jx7mR9Tt-HNBY-U5a2',
+      clientID: process.env.GOOGLE_CLIENTID,
+      clientSecret: process.env.GOOGLE_SECRET,
       callbackURL: 'http://localhost:3000/auth/google/callback',
       passReqToCallback: true,
     },
@@ -56,8 +55,8 @@ passport.use(
 passport.use(
   new FacebookStrategy(
     {
-      clientID: 'FACEBOOK_APP_ID',
-      clientSecret: 'FACEBOOK_APP_SECRET',
+      clientID: process.env.FACEBOOK_APP_ID,
+      clientSecret: process.env.FACEBOOK_APP_SECRET,
       callbackURL: 'http://www.example.com/auth/facebook/callback',
     },
     function (accessToken, refreshToken, profile, done) {
@@ -70,8 +69,8 @@ passport.use(
 passport.use(
   new TwitterStrategy(
     {
-      consumerKey: 'TWITTER_CONSUMER_KEY',
-      consumerSecret: 'TWITTER_CONSUMER_SECRET',
+      consumerKey: process.env.TWITTER_CONSUMER_KEY,
+      consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
       callbackURL: 'http://www.example.com/auth/twitter/callback',
     },
     function (token, tokenSecret, profile, done) {

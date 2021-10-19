@@ -19,6 +19,6 @@ function handleError(err) {
 db().then((res) => {
   express(app);
   app.listen(process.env.PORT, function () {
-    logger.info('server sarted at port', process.env.PORT);
+    logger.info(`server sarted at port ${process.env.PORT}`);
   });
 });
